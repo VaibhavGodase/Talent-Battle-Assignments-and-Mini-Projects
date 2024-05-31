@@ -1,0 +1,35 @@
+.box {
+    width: 500px;
+    height: 250px;
+    border: 2px solid black;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 35%;
+    top: 20%;
+  }
+
+  .Input {
+    padding: 1rem;
+    font-size: 1rem;
+    font-size: 1.5rem;
+  }
+  button {
+    height: 100px;
+    width: 150px;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: rgb(4, 249, 249);
+  }
+  #Power {
+    font-size: 20rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }

@@ -1,0 +1,59 @@
+🍂 Scenario: Car Parking in a Mall
+
+
+❄️ . Car Parking Ticket (JWT): This is a ticket given to the car owner when they park their car. It contains information like the car number, parking spot, and time of entry.
+
+❄️ 2. Mall's Secret Stamp (Secret Key): The parking ticket has a special stamp that only the parking office can put on it. This stamp ensures the ticket is genuine and hasn't been forged.
+
+❄️ 3. Parking Attendant (Verifier): The person at the exit gate who checks the parking ticket to ensure it's valid before allowing the car to leave.
+
+
+
+
+🍂 How It Works
+
+❄️ 1. Issuing the Parking Ticket (Creating the JWT)
+
+When a car enters the mall parking:
+
+- The parking office (server) issues a ticket (JWT) with details about the car and parking spot.
+- The ticket is stamped with a secret stamp (signature created using the secret key).
+
+Example of the Ticket Issuance Process:
+- Information on the Ticket (Payload): Car number, parking spot, time of entry.
+- Ticket Format (Header): Information about the type of ticket and how it’s stamped.
+- Special Stamp (Signature): Created using the secret key to ensure authenticity.
+
+
+❄️ 2. Checking the Parking Ticket (Verifying the JWT)
+
+When the car owner wants to leave the parking:
+
+- The parking attendant (verifier) checks the ticket.
+- The attendant verifies the special stamp using the secret stamp that only they know (the secret key).
+- If the stamp is valid, the car is allowed to leave. If not, the ticket is rejected.
+
+Example of the Ticket Verification Process:
+- The car owner presents the ticket at the exit.
+- The parking attendant verifies the stamp using the secret key.
+
+
+🍂Why the Secret Stamp (Secret Key) is Important
+
+❄️1. Authenticity: The secret stamp ensures that only the mall's parking office can issue valid tickets. Without the secret stamp, anyone could forge a ticket.
+❄️2. Integrity: The secret stamp guarantees that the ticket has not been tampered with. If someone tries to alter the ticket details, the stamp will no longer match.
+
+ 🍂Key Points
+
+❄️1. Parking Ticket (JWT): Contains information about the car and parking spot.
+❄️2. Secret Stamp (Signature): Ensures the ticket is genuine. Created using the secret key.
+❄️3. Parking Attendant (Verifier): Checks the ticket's validity using the secret key.
+
+🍂Summary
+
+- JWT: A token (parking ticket) containing information.
+- Secret Key: A secret known only to the server (mall parking office) used to create a unique signature (stamp).
+- Signature: Ensures the token (ticket) is genuine and hasn't been tampered with.
+- Verification: The server (parking attendant) checks the signature using the secret key to validate the token (ticket).
+
+By using this analogy, it becomes clear that the secret key is essential for creating a trustworthy system where only valid tickets (JWTs) are accepted, ensuring security and authenticity.

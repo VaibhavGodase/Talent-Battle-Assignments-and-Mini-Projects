@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Form Grid Assignment</title>
+    <!--Google Font-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+      }
+      body {
+        height: 100vh;
+        background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo0XawF4KynrIjrJ0n_Gg_wSD7-AtORJw0Qw&usqp=CAU");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+      .container {
+        background-color: #ffffff;
+        width: 70%;
+        min-width: 420px;
+        padding: 35px 50px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-radius: 10px;
+        box-shadow: 20px 30px 25px rgba(0, 0, 0, 0.15);
+      }
+      h1 {
+        font-size: 40px;
+        text-align: center;
+        color: black;
+      }
+      p {
+        position: relative;
+        margin: auto;
+        width: 100%;
+        text-align: center;
+        color: #606060;
+        font-size: 25px;
+        font-weight: 400;
+      }
+      form {
+        width: 100%;
+        position: relative;
+        margin: 30px auto 0 auto;
+      }
+      .row {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 20px 30px;
+        margin-bottom: 20px;
+      }
+      label {
+        color: #1c093c;
+        font-size: 20px;
+      }
+      textarea,
+      input {
+        width: 100%;
+        font-weight: 400;
+        padding: 8px 10px;
+        border-radius: 5px;
+        border: 1.2px solid #7690ee;
+        margin-top: 5px;
+      }
+      textarea {
+        resize: none;
+      }
+      textarea:focus,
+      input:focus {
+        outline: none;
+        border-color: #6f6df4;
+      }
+      button {
+        border: none;
+        padding: 10px 20px;
+        background: rgb(247, 6, 6);
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Responsive Form</h1>
+      <p>Please complete the form provided below</p>
+      <form>
+        <div class="row">
+          <div class="column">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Your name here"
+              required
+            />
+          </div>
+          <div class="column">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Your email here"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="column">
+            <label for="subject">Password</label>
+            <input
+              type="password"
+              id="Password"
+              placeholder="Your Password here"
+              required
+            />
+          </div>
+          <div class="column">
+            <label for="contact">Contact Number</label>
+            <input
+              type="tel"
+              id="contact"
+              placeholder="Your phone number here"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <label for="issue">Describe your issue</label>
+            <textarea
+              id="issue"
+              placeholder="Describe your issue in detail here"
+              rows="3"
+            ></textarea>
+          </div>
+        </div>
+        <button>Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

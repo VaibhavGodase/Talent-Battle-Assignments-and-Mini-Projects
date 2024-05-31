@@ -1,0 +1,105 @@
+
+🍂🍂🍂 Learn step by step, we give number for each step ( like ths :1️⃣2️⃣3️⃣ ) so it easy to understand
+
+
+1️⃣////////////////////////////////////// Registration ////////////////////////////////////////////////////
+
+1. create server
+2. connect main hbs file to server
+3. create mongoose file and connect mongoose & require this file in server file
+4. add static path of frontend file in server file
+5. define schema in seprate file , schema for registration form input
+6. get the input form data by action and method 
+7. to save  form data in database, write like this in app.post  ,  firstname: req.body.firstname,  firstname means we set in schema and firstname in this req.body.firstname is we provide name to input like this : <input type="text" class="input" name="firstname">
+8. and save this.
+
+
+
+2️⃣////////////////////////////////////// Log In ////////////////////////////////////////////////////////////
+
+1. create login hbs page
+2.add login route server in main file
+3. get the input form data by action and method 
+4. create app.post to save data in database
+
+
+
+
+3️⃣////////////////////////////////////// Bcrypts ////////////////////////////////////////////////////////////
+
+1. install Bcrypt
+2. require Bcrypt
+3.  and use as shown in register.js file
+4. for use encoded password in login check in app.js file
+
+
+
+4️⃣////////////////////////////////////// JWT ////////////////////////////////////////////////////////////
+
+1. for JWT read JWT file or short version in near JWT code
+
+
+5️⃣////////////////////////////////////// .DOTENV ////////////////////////////////////////////////////////////
+
+1. install DOTENV
+2. require("dotenv").config() and add this in main js file at the top
+3. create .env file and paste your secret key and give name to it,  means  SECRET_KEY=mynameisvaibhavbaburaogodaseyoutuber
+4. and replace this   process.env.SECRET_KEY   with your secret key in code means this 
+ const token = jwt.sign({ _id: this._id.toString() }, process.env.SECRET_KEY)
+ 
+
+6️⃣////////////////////////////////////// Cookie ////////////////////////////////////////////////////////////
+
+1. read cookie code in main js file
+
+
+7️⃣////////////////////////////////////// Cookie Parser ////////////////////////////////////////////////////////////
+
+1. install cookie Parser
+2. require cookie Parser
+3. read cokie parser code in main js file
+
+
+8️⃣////////////////////////////////////// Authentication ////////////////////////////////////////////////////////////
+
+1. create middlware folder
+2. cretate auth.js file in that folder
+3. require jsonwebtoken in auth.js file
+4. require Register from register.js file in auth.js file
+5. write auth function in auth.js file
+6. export auth function and import in main js file
+7. use as a parameter that function like this ,  app.get ("/secret", auth, (req, res)) => 
+8. more read in auth.js file and app.js file
+
+
+
+9️⃣////////////////////////////////////// Logout after Authentication ////////////////////////////////////////////////////////////
+
+1. create Logout router in main js file and add auth function in that router
+2. for more information read that logout route
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////// hbs ///////////////////////////////////////////////////////////////
+
+
+hbs
+1. create views folder in that same folder where main js file stored
+2. add hbs file in views folder
+3. app.set("view engine", "hbs")  add this line in main js file , it help to find index.hbs file
+4. but if you want not store views folder in same folder where main js file stored then create path of   that location where you stored views folder using path module and add this like this : app.set("views", template_path) , means we are saying that for finding views folder find template_path .
+5. res.render("index") render index.hbs file like this
+
+
+
+
+
+////////////////////////////////////// Partials ////////////////////////////////////////////////////
+
+partials
+1. crete partials files 
+2. add that partials in any hbs or  index.hbs file like this     {{>navbar}}
+3. require hbs in main js file
+4. hbs.registerPartials(partials_path)  add this line in main js file , partials_path is partials folder path in that partials files stored , get partials_path with use of path module

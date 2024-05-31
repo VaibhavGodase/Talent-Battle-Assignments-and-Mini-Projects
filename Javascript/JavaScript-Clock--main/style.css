@@ -1,0 +1,133 @@
+/* Global Styles */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Mono', monospace;
+    
+}
+
+body{
+    background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1{
+    margin-bottom: 2rem;
+}
+
+.clock{
+    width: 500px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 40%;
+    border: 2px solid black;
+    position: relative;
+}
+
+.clock .number{
+    /* Created Variable For Rotation default 0 */
+    --rotation: 0;
+    /* It Will Make Number class Position Absoulte To Clock Class */
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    /* Added This To Rotate Clock Numbers in 360 Degree  */
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+}
+
+/* This Will Position Clock Numbers At Proper Position */
+.clock .number1{
+    --rotation:30deg;
+}
+.clock .number2{
+    --rotation:60deg;
+}
+.clock .number3{
+    --rotation:90deg;
+}
+.clock .number4{
+    --rotation:120deg;
+}
+.clock .number5{
+    --rotation:150deg;
+}
+.clock .number6{
+    --rotation:180deg;
+}
+
+.clock .number7{
+    --rotation:210deg;
+}
+.clock .number8{
+    --rotation:240deg;
+}
+.clock .number9{
+    --rotation:270deg;
+}
+.clock .number10{
+    --rotation:300deg;
+}
+.clock .number11{
+    --rotation:330deg;
+}
+.clock .number12{
+    --rotation:360deg;
+}
+
+/* Styling Of Hands  */
+.clock .hand{
+--rotation:0; 
+position: absolute;
+bottom: 50%;
+left: 50%;
+z-index: 10;
+border: 1px solid white;
+background-color: black;
+/* --rotation Variable Is Updated Inside JavaScript File*/
+transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+transform-origin: bottom;
+}
+
+/* Styling Of Clock Hands */
+
+.clock .hand.second{
+    width: 3px;
+    height: 45%;
+    background-color: red;
+}
+
+.clock .hand.hour{
+    width: 11px;
+    height: 35%;
+    background-color: black;
+}
+
+.clock .hand.minute{
+    width: 8px;
+    height: 40%;
+    background-color: black;
+}
+
+/* Styling Of Small Circle In The Center Of Screen*/
+
+
+.clock::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
